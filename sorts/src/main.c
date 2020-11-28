@@ -4,6 +4,7 @@
 #include <time.h>
 #include "selection_sort.h"
 #include "insertion_sort.h"
+#include "merge_sort.h"
 
 void print_arr(int *arr, int sz)
 {
@@ -40,7 +41,7 @@ int main()
 {
     srand(time(0));
 
-    int sz = 15;
+    int sz = 20;
     int *arr_orig = random_array(sz);
     printf("Random Array (Size = %d): ", sz);
     print_arr(arr_orig, sz);
@@ -56,6 +57,12 @@ int main()
     memcpy(insertion_cpy, arr_orig, sz * sizeof(int));
     insertion_sort(insertion_cpy, sz);
     print_arr(insertion_cpy, sz);
+
+    printf("Merge Sort: ");
+    int *merge_cpy = malloc(sizeof(int) * sz);
+    memcpy(merge_cpy, arr_orig, sz * sizeof(int));
+    merge_sort(merge_cpy, sz);
+    print_arr(merge_cpy, sz);
 
     return EXIT_SUCCESS;
 }
