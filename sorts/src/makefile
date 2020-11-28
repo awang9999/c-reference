@@ -9,10 +9,10 @@ RM=rm -f
 
 LIBS=-lm
 
-_DEPS = selection_sort.h insertion_sort.h merge_sort.h
+_DEPS = selection_sort.h insertion_sort.h merge_sort.h quick_sort.h radix_sort.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o selection_sort.o insertion_sort.o merge_sort.o
+_OBJ = main.o selection_sort.o insertion_sort.o merge_sort.o quick_sort.o radix_sort.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 

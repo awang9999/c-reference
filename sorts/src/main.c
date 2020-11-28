@@ -5,6 +5,8 @@
 #include "selection_sort.h"
 #include "insertion_sort.h"
 #include "merge_sort.h"
+#include "quick_sort.h"
+#include "radix_sort.h"
 
 void print_arr(int *arr, int sz)
 {
@@ -63,6 +65,18 @@ int main()
     memcpy(merge_cpy, arr_orig, sz * sizeof(int));
     merge_sort(merge_cpy, sz);
     print_arr(merge_cpy, sz);
+
+    printf("Quick Sort: ");
+    int *quick_cpy = malloc(sizeof(int) * sz);
+    memcpy(quick_cpy, arr_orig, sz * sizeof(int));
+    quick_sort(quick_cpy, sz);
+    print_arr(quick_cpy, sz);
+
+    printf("Radix Sort: ");
+    int *radix_cpy = malloc(sizeof(int) * sz);
+    memcpy(radix_cpy, arr_orig, sz * sizeof(int));
+    radix_sort(radix_cpy, sz);
+    print_arr(radix_cpy, sz);
 
     return EXIT_SUCCESS;
 }
